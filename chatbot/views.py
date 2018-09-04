@@ -25,10 +25,19 @@ def message(request):
         dustgrade = findDustGrade('봉산동')
         dustvalue = findDustValue('봉산동')
 
+    image_url = ""
+    if dustgrade == '좋음':
+        image_url = 'https://raw.githubusercontent.com/janghyukjin/cau_dust_chatbot/master/src/laughing.png'
+    elif dustgrade == '보통':
+        image_url = 'https://raw.githubusercontent.com/janghyukjin/cau_dust_chatbot/master/src/muted.png'
+    elif dustgrade == '나쁨':
+        image_url = 'https://raw.githubusercontent.com/janghyukjin/cau_dust_chatbot/master/src/tongue.png'
+    else :
+        image_url = 'https://raw.githubusercontent.com/janghyukjin/cau_dust_chatbot/master/src/angel.png'
     return JsonResponse({
-        'photo': {'url': '',
-                  'width': 640,
-                  'height': 480
+        'photo': {'url': image_url,
+                  'width': 128,
+                  'height': 128
                   },
         'message': {
             'text': return_str + "의 미세먼지 농도는 " + str(dustvalue) + "이고, " + return_str + "의 미세먼지 단계는 " + str(dustgrade) + "입니당"
