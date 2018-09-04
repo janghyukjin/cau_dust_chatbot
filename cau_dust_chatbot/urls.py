@@ -18,6 +18,6 @@ from chatbot import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^keyboard/', views.keyboard),
+    url(r'^keyboard', views.keyboard),
     url(r'^message', views.message)
 ]

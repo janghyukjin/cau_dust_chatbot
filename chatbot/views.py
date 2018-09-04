@@ -35,8 +35,6 @@ def findDustGrade(station):
     params = '&dataTerm=month&pageNo=1&numOfRows=10&ServiceKey=ay6El74FK5OaJ2Go2htYV%2BmXjF5Qc%2FT2IsuWcIhJiAPd7lkq27HBAG%2BwMDYvQxO9%2ByjoLmm7PvUh52dsCA18VA%3D%3D&ver=1.3'
 
     r = requests.get(url + stationName + params)
-    print(r.text)
-
     soup = BeautifulSoup(r.text, "lxml")
     try:
         pmGrade = soup.find('pm25grade')
