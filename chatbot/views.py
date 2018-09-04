@@ -35,11 +35,11 @@ def message(request):
     else :
         image_url = 'https://raw.githubusercontent.com/janghyukjin/cau_dust_chatbot/master/src/angel.png'
     return JsonResponse({
-        'photo': {'url': image_url,
-                  'width': 128,
-                  'height': 128
-                  },
         'message': {
+            'photo': {'url': image_url,
+                      'width': 128,
+                      'height': 128
+                      },
             'text': return_str + "의 미세먼지 농도는 " + str(dustvalue) + "이고, " + return_str + "의 미세먼지 단계는 " + str(dustgrade) + "입니당"
         },
         'keyboard': {
